@@ -1,0 +1,6 @@
+/*.gem
+/gems
+/Gemfile.lock
+/.bundle
+/tmp
+/scratch
