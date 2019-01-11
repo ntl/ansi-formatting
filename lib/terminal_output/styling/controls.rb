@@ -5,3 +5,4 @@ require 'terminal_output/styling/controls/color/mode/rgb/scale'
 
 require 'terminal_output/styling/controls/color'
 require 'terminal_output/styling/controls/color/standard'
+require 'terminal_output/styling/controls/color/high_intensity'
