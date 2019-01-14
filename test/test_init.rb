@@ -8,4 +8,4 @@ require 'terminal_output/styling/controls'
 
 require_relative './fixtures/fixtures_init'
 
-#include TerminalOutput::Styling
+include TerminalOutput::Styling
