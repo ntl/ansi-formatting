@@ -29,3 +29,5 @@ require 'terminal_output/styling/trait/overline'
 require 'terminal_output/styling/trait/font/weight'
 require 'terminal_output/styling/trait/font/slant'
 require 'terminal_output/styling/trait/font/fraktur'
+
+require 'terminal_output/styling/trait/color/reverse_video'
