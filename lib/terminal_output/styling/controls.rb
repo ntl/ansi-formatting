@@ -27,3 +27,4 @@ require 'terminal_output/styling/controls/trait/font/slant'
 require 'terminal_output/styling/controls/trait/font/fraktur'
 
 require 'terminal_output/styling/controls/trait/color/reverse_video'
+require 'terminal_output/styling/controls/trait/color/foreground'
