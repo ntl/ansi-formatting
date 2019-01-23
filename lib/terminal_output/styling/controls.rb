@@ -16,3 +16,5 @@ require 'terminal_output/styling/controls/color/twenty_four_bit/unabridged'
 require 'terminal_output/styling/controls/color/twenty_four_bit/abridged'
 
 require 'terminal_output/styling/controls/style'
+
+require 'terminal_output/styling/controls/trait'

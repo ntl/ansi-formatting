@@ -20,3 +20,5 @@ require 'terminal_output/styling/color/palette/twenty_four_bit/abridged'
 require 'terminal_output/styling/color'
 
 require 'terminal_output/styling/style'
+
+require 'terminal_output/styling/trait'
