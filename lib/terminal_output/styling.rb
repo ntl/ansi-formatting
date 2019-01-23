@@ -22,3 +22,4 @@ require 'terminal_output/styling/color'
 require 'terminal_output/styling/style'
 
 require 'terminal_output/styling/trait'
+require 'terminal_output/styling/trait/underline'
