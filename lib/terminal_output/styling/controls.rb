@@ -19,3 +19,4 @@ require 'terminal_output/styling/controls/style'
 
 require 'terminal_output/styling/controls/trait'
 require 'terminal_output/styling/controls/trait/underline'
+require 'terminal_output/styling/controls/trait/blink'
