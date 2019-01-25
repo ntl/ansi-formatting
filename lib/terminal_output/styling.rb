@@ -20,3 +20,17 @@ require 'terminal_output/styling/color/palette/twenty_four_bit/abridged'
 require 'terminal_output/styling/color'
 
 require 'terminal_output/styling/style'
+
+require 'terminal_output/styling/trait'
+require 'terminal_output/styling/trait/underline'
+require 'terminal_output/styling/trait/blink'
+require 'terminal_output/styling/trait/strikethrough'
+require 'terminal_output/styling/trait/overline'
+require 'terminal_output/styling/trait/font/intensity'
+require 'terminal_output/styling/trait/font/slant'
+require 'terminal_output/styling/trait/font/fraktur'
+
+require 'terminal_output/styling/trait/color/reverse_video'
+require 'terminal_output/styling/trait/color/foreground'
+require 'terminal_output/styling/trait/color/foreground/transparent'
+require 'terminal_output/styling/trait/color/background'
