@@ -45,6 +45,24 @@ module TerminalOutput
         self
       end
 
+      def sgr_code(sgr_code)
+        unless render_traits?
+          self.mode = Mode.text
+          return self
+        end
+
+        if mode == Mode.text
+          device.write("\e[")
+          self.mode = Mode.styling
+        else
+          device.write(';')
+        end
+
+        device.write(sgr_code)
+
+        self
+      end
+
       def sync
         if mode == Mode.styling
           device.write('m')
