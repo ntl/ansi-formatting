@@ -45,6 +45,12 @@ module TerminalOutput
         self
       end
 
+      def reset
+        sgr(:reset)
+
+        sync
+      end
+
       def sgr(sgr_id)
         sgr_code = SGR::Code.fetch(sgr_id)
 
