@@ -37,6 +37,14 @@ module TerminalOutput
 
       alias_method :render_traits?, :render_traits
 
+      def append(text)
+        sync
+
+        device.write(text)
+
+        self
+      end
+
       def sync
         if mode == Mode.styling
           device.write('m')
