@@ -45,6 +45,12 @@ module TerminalOutput
         self
       end
 
+      def sgr(sgr_id)
+        sgr_code = SGR::Code.fetch(sgr_id)
+
+        sgr_code(sgr_code)
+      end
+
       def sgr_code(sgr_code)
         unless render_traits?
           self.mode = Mode.text
