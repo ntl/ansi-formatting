@@ -3,6 +3,8 @@ module TerminalOutput
     class Write
       Error = Class.new(RuntimeError)
 
+      extend TraitMacro
+
       attr_writer :device
       def device
         @device ||= StringIO.new
@@ -36,6 +38,18 @@ module TerminalOutput
       end
 
       alias_method :render_traits?, :render_traits
+
+      def trait(trait, variant, text=nil, &block)
+        style = trait.style(variant)
+
+        style(style, text, &block)
+      end
+
+      def reset_trait(trait)
+        reset_code = trait.reset
+
+        sgr_code(reset_code)
+      end
 
       def style(style, text=nil, &block)
         code = style.code
