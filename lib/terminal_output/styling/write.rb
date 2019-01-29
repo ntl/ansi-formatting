@@ -1,6 +1,8 @@
 module TerminalOutput
   module Styling
     class Write
+      extend TraitMacro
+
       def raw_writer
         @raw_writer ||= Raw::Substitute.build
       end
@@ -16,6 +18,18 @@ module TerminalOutput
         instance = new
         Raw.configure(instance, device, render_styling: render_styling, attr_name: :raw_writer)
         instance
+      end
+
+      def trait(trait, variant, text=nil, &block)
+        style = trait.style(variant)
+
+        style(style, text, &block)
+      end
+
+      def reset_trait(trait)
+        style = trait.style
+
+        reset_style(style)
       end
 
       def style(style, text=nil, &block)

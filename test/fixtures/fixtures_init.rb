@@ -8,3 +8,5 @@ require_relative './trait/unknown'
 
 require_relative './writer/style/activate'
 require_relative './writer/style/reset'
+
+require_relative './writer/trait'
