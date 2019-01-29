@@ -18,3 +18,5 @@ require 'terminal_output/styling/color/palette/twenty_four_bit/value'
 require 'terminal_output/styling/color/palette/twenty_four_bit/unabridged'
 require 'terminal_output/styling/color/palette/twenty_four_bit/abridged'
 require 'terminal_output/styling/color'
+
+require 'terminal_output/styling/style'
