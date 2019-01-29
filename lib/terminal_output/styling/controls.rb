@@ -14,3 +14,5 @@ require 'terminal_output/styling/controls/color/eight_bit/greyscale'
 require 'terminal_output/styling/controls/color/twenty_four_bit'
 require 'terminal_output/styling/controls/color/twenty_four_bit/unabridged'
 require 'terminal_output/styling/controls/color/twenty_four_bit/abridged'
+
+require 'terminal_output/styling/controls/style'
