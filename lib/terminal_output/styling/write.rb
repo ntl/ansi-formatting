@@ -37,6 +37,27 @@ module TerminalOutput
 
       alias_method :render_traits?, :render_traits
 
+      def style(style, text=nil, &block)
+        code = style.code
+        sgr_code(code)
+
+        unless text.nil? && block.nil?
+          append(text) unless text.nil?
+
+          instance_exec(self, &block) unless block.nil?
+
+          reset_style(style)
+        end
+
+        self
+      end
+
+      def reset_style(style)
+        reset_code = style.reset_code
+
+        sgr_code(reset_code)
+      end
+
       def append(text)
         sync
 
