@@ -8,6 +8,11 @@ module TerminalOutput
         @device ||= StringIO.new
       end
 
+      attr_writer :mode
+      def mode
+        @mode ||= Mode.text
+      end
+
       attr_writer :render_traits
       def render_traits
         return @render_traits if defined?(@render_traits)
@@ -32,6 +37,17 @@ module TerminalOutput
 
       alias_method :render_traits?, :render_traits
 
+      def sync
+        if mode == Mode.styling
+          device.write('m')
+          self.mode = Mode.text
+        end
+
+        device.flush
+
+        self
+      end
+
       def self.render_traits_setting(device, env: nil)
         env ||= ::ENV
 
@@ -44,6 +60,16 @@ module TerminalOutput
           device.tty?
         else
           raise Error, "Unknown value for ENV['TERMINAL_OUTPUT_STYLING'] (Value: #{value.inspect}, Accepted Values: 'on', 'off', 'detect')"
+        end
+      end
+
+      module Mode
+        def self.text
+          :text
+        end
+
+        def self.styling
+          :styling
         end
       end
     end
