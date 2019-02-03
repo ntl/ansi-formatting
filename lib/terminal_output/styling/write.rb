@@ -30,6 +30,7 @@ module TerminalOutput
       trait :reverse_video, Trait::Color::ReverseVideo
       trait :transparent_foreground, Trait::Color::Foreground::Transparent, alias: :transparent
       trait :foreground_color, Trait::Color::Foreground, alias: :fg
+      trait :background_color, Trait::Color::Background, alias: :bg
 
       def trait(trait, variant, text=nil, &block)
         style = trait.style(variant)
