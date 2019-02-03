@@ -26,6 +26,7 @@ module TerminalOutput
       trait :underline, Trait::Underline
       trait :blink, Trait::Blink
       trait :strikethrough, Trait::Strikethrough
+      trait :overline, Trait::Overline
 
       def trait(trait, variant, text=nil, &block)
         style = trait.style(variant)
