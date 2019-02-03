@@ -18,6 +18,14 @@ module TerminalOutput
         instance
       end
 
+      def sgr(sgr_id)
+        code = SGR::Code.fetch(sgr_id)
+
+        batch do
+          code(code)
+        end
+      end
+
       def batch(&block)
         if batching?
           instance_exec(self, &block)
