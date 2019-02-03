@@ -2,14 +2,24 @@ module TerminalOutput
   module Styling
     class Write
       class Raw
-        attr_writer :device
+        Error = Class.new(RuntimeError)
+
         def device
           @device ||= StringIO.new
         end
+        attr_writer :device
 
-        attr_writer :mode
         def mode
           @mode ||= Mode.text
+        end
+        attr_writer :mode
+
+        def self.configure(receiver, device=nil, render_styling: nil, env: nil, attr_name: nil)
+          attr_name ||= :write
+
+          instance = Build.(device, render_styling: render_styling, env: env)
+          receiver.public_send("#{attr_name}=", instance)
+          instance
         end
 
         def text(text)
