@@ -31,3 +31,5 @@ require 'terminal_output/styling/controls/trait/color/foreground/transparent'
 require 'terminal_output/styling/controls/trait/color/background'
 
 require 'terminal_output/styling/controls/device'
+
+require 'terminal_output/styling/controls/writer'

@@ -1,6 +1,8 @@
 module TerminalOutput
   module Styling
     class Write
+      extend TraitMacro
+
       def raw_writer
         @raw_writer ||= Raw::Substitute.build
       end
@@ -16,6 +18,30 @@ module TerminalOutput
         instance = new
         Raw.configure(instance, device, render_styling: render_styling, attr_name: :raw_writer)
         instance
+      end
+
+      trait :font_weight, Trait::Font::Weight
+      trait :font_slant, Trait::Font::Slant
+      trait :fraktur_font, Trait::Font::Fraktur
+      trait :underline, Trait::Underline
+      trait :blink, Trait::Blink
+      trait :strikethrough, Trait::Strikethrough
+      trait :overline, Trait::Overline
+      trait :reverse_video, Trait::Color::ReverseVideo
+      trait :transparent_foreground, Trait::Color::Foreground::Transparent, alias: :transparent
+      trait :foreground_color, Trait::Color::Foreground, alias: :fg
+      trait :background_color, Trait::Color::Background, alias: :bg
+
+      def trait(trait, variant, text=nil, &block)
+        style = trait.style(variant)
+
+        style(style, text, &block)
+      end
+
+      def reset_trait(trait)
+        style = trait.style
+
+        reset_style(style)
       end
 
       def style(style, text=nil, &block)
