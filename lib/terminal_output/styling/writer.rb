@@ -14,6 +14,7 @@ module TerminalOutput
       trait :underline, Trait::Underline
       trait :blink, Trait::Blink
       trait :strikethrough, Trait::Strikethrough
+      trait :overline, Trait::Overline
 
       def style(style, text=nil, &block)
         code = style.code
