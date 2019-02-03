@@ -18,6 +18,7 @@ module TerminalOutput
       trait :reverse_video, Trait::Color::ReverseVideo
       trait :transparent_foreground, Trait::Color::Foreground::Transparent, alias: :transparent
       trait :foreground_color, Trait::Color::Foreground, alias: :fg
+      trait :background_color, Trait::Color::Background, alias: :bg
 
       def style(style, text=nil, &block)
         code = style.code
