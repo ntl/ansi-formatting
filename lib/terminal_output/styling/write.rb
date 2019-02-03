@@ -28,6 +28,7 @@ module TerminalOutput
       trait :strikethrough, Trait::Strikethrough
       trait :overline, Trait::Overline
       trait :reverse_video, Trait::Color::ReverseVideo
+      trait :transparent_foreground, Trait::Color::Foreground::Transparent, alias: :transparent
 
       def trait(trait, variant, text=nil, &block)
         style = trait.style(variant)
