@@ -21,6 +21,7 @@ module TerminalOutput
       end
 
       trait :font_weight, Trait::Font::Weight
+      trait :font_slant, Trait::Font::Slant
 
       def trait(trait, variant, text=nil, &block)
         style = trait.style(variant)
