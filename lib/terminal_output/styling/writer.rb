@@ -17,6 +17,7 @@ module TerminalOutput
       trait :overline, Trait::Overline
       trait :reverse_video, Trait::Color::ReverseVideo
       trait :transparent_foreground, Trait::Color::Foreground::Transparent, alias: :transparent
+      trait :foreground_color, Trait::Color::Foreground, alias: :fg
 
       def style(style, text=nil, &block)
         code = style.code
