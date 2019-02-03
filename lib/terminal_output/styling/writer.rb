@@ -9,6 +9,7 @@ module TerminalOutput
       attr_writer :device
 
       trait :font_weight, Trait::Font::Weight
+      trait :font_slant, Trait::Font::Slant
 
       def style(style, text=nil, &block)
         code = style.code
