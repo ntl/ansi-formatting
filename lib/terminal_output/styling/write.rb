@@ -24,6 +24,7 @@ module TerminalOutput
       trait :font_slant, Trait::Font::Slant
       trait :fraktur_font, Trait::Font::Fraktur, alias: :fraktur
       trait :underline, Trait::Underline
+      trait :blink, Trait::Blink
 
       def trait(trait, variant, text=nil, &block)
         style = trait.style(variant)
