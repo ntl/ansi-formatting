@@ -22,9 +22,10 @@ module TerminalOutput
 
       trait :font_weight, Trait::Font::Weight
       trait :font_slant, Trait::Font::Slant
-      trait :fraktur_font, Trait::Font::Fraktur, alias: :fraktur
+      trait :fraktur_font, Trait::Font::Fraktur
       trait :underline, Trait::Underline
       trait :blink, Trait::Blink
+      trait :strikethrough, Trait::Strikethrough
 
       def trait(trait, variant, text=nil, &block)
         style = trait.style(variant)
