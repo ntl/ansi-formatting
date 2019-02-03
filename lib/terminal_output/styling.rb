@@ -35,3 +35,4 @@ require 'terminal_output/styling/trait/color/foreground/transparent'
 require 'terminal_output/styling/trait/color/background'
 
 require 'terminal_output/styling/write/raw'
+require 'terminal_output/styling/write/raw/omit_styling'
