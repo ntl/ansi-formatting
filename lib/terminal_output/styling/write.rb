@@ -22,6 +22,7 @@ module TerminalOutput
 
       trait :font_weight, Trait::Font::Weight
       trait :font_slant, Trait::Font::Slant
+      trait :fraktur_font, Trait::Font::Fraktur, alias: :fraktur
 
       def trait(trait, variant, text=nil, &block)
         style = trait.style(variant)
