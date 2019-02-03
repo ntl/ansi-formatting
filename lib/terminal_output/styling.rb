@@ -36,3 +36,4 @@ require 'terminal_output/styling/trait/color/background'
 
 require 'terminal_output/styling/write/raw'
 require 'terminal_output/styling/write/raw/omit_styling'
+require 'terminal_output/styling/write/raw/substitute'
