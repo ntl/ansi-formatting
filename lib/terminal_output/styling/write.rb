@@ -27,6 +27,7 @@ module TerminalOutput
       trait :blink, Trait::Blink
       trait :strikethrough, Trait::Strikethrough
       trait :overline, Trait::Overline
+      trait :reverse_video, Trait::Color::ReverseVideo
 
       def trait(trait, variant, text=nil, &block)
         style = trait.style(variant)
