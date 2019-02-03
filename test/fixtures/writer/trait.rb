@@ -1,6 +1,15 @@
 module Fixtures
   module Writer
     module Trait
+      def self.call(name:, trait:, variant:, writer_class: nil)
+        ClassMethod.(name: name, trait: trait, variant: variant, writer_class: writer_class)
+        Activate.(name: name, trait: trait, variant: variant, writer_class: writer_class)
+        Reset.(name: name, trait: trait, writer_class: writer_class)
+        Text.(name: name, trait: trait, variant: variant, writer_class: writer_class)
+        Text::Newline.(name: name, trait: trait, variant: variant, writer_class: writer_class)
+        Block.(name: name, trait: trait, variant: variant, writer_class: writer_class)
+      end
+
       def self.included(cls)
         cls.class_exec do
           extend Build
