@@ -10,6 +10,7 @@ module TerminalOutput
 
       trait :font_weight, Trait::Font::Weight
       trait :font_slant, Trait::Font::Slant
+      trait :fraktur_font, Trait::Font::Fraktur, alias: :fraktur
 
       def style(style, text=nil, &block)
         code = style.code
