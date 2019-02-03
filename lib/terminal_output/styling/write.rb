@@ -18,6 +18,10 @@ module TerminalOutput
         instance
       end
 
+      def reset
+        sgr(:reset)
+      end
+
       def sgr(sgr_id)
         code = SGR::Code.fetch(sgr_id)
 
