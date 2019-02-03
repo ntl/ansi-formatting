@@ -2,13 +2,13 @@ require_relative '../../automated_init'
 
 context "Writer" do
   context "Traits" do
-    context "Fraktur Font" do
-      trait = Trait::Font::Fraktur
+    context "Strikethrough" do
+      trait = Trait::Strikethrough
 
-      variant = Controls::Trait::Font::Fraktur::Variant.example
+      variant = Controls::Trait::Strikethrough::Variant.example
 
       Fixtures::Writer::Trait.(
-        name: :fraktur_font,
+        name: :strikethrough,
         trait: trait,
         variant: variant
       )

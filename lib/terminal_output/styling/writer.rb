@@ -13,6 +13,7 @@ module TerminalOutput
       trait :fraktur_font, Trait::Font::Fraktur, alias: :fraktur
       trait :underline, Trait::Underline
       trait :blink, Trait::Blink
+      trait :strikethrough, Trait::Strikethrough
 
       def style(style, text=nil, &block)
         code = style.code
