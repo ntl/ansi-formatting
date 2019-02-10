@@ -2,6 +2,7 @@ module TerminalOutput
   module Styling
     class Write
       extend TraitMacro
+      extend StyleMacro
 
       def raw_writer
         @raw_writer ||= Raw::Substitute.build
