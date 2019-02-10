@@ -2,6 +2,7 @@ module TerminalOutput
   module Styling
     class Writer
       extend TraitMacro
+      extend StyleMacro
 
       def device
         @device ||= Device::Substitute.build
