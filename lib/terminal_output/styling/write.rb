@@ -6,10 +6,31 @@ module TerminalOutput
       end
       attr_writer :raw_writer
 
+      def batching
+        @batching ||= false
+      end
+      attr_writer :batching
+      alias_method :batching?, :batching
+
       def self.build(device=nil, render_styling: nil)
         instance = new
         Raw.configure(instance, device, render_styling: render_styling, attr_name: :raw_writer)
         instance
+      end
+
+      def batch(&block)
+        if batching?
+          instance_exec(self, &block)
+          return self
+        end
+
+        self.batching = true
+
+        begin
+          return batch(&block)
+        ensure
+          raw_writer.sync
+        end
       end
 
       def text(text)
