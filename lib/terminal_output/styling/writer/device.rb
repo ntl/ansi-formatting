@@ -22,6 +22,23 @@ module TerminalOutput
           self.omit_escape_sequences = true
         end
 
+        def nesting
+          @nesting ||= 0
+        end
+        attr_writer :nesting
+
+        def sync(&block)
+          self.nesting += 1
+
+          block.() unless block.nil?
+
+          self.nesting -= 1
+
+          text('') if nesting.zero?
+
+          return mode == Mode.text
+        end
+
         def code(code)
           return 0 if omit_escape_sequences?
 
