@@ -12,6 +12,33 @@ module TerminalOutput
         end
         attr_writer :mode
 
+        def omit_escape_sequences
+          @omit_escape_sequences ||= false
+        end
+        attr_writer :omit_escape_sequences
+        alias_method :omit_escape_sequences?, :omit_escape_sequences
+
+        def omit_escape_sequences!
+          self.omit_escape_sequences = true
+        end
+
+        def code(code)
+          return 0 if omit_escape_sequences?
+
+          bytes_written = 0
+
+          if mode == Mode.text
+            bytes_written += io.write("\e[")
+
+            self.mode = Mode.escape_sequence
+          else
+            bytes_written += io.write(';')
+          end
+
+          bytes_written += io.write(code)
+          bytes_written
+        end
+
         def newline
           text(newline_character)
         end
