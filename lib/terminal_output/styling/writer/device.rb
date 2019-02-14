@@ -12,6 +12,18 @@ module TerminalOutput
         end
         attr_writer :mode
 
+        def newline
+          text(newline_character)
+        end
+
+        def newline_character
+          self.class.newline_character
+        end
+
+        def self.newline_character
+          @newline_character ||= StringIO.new.tap(&:puts).string
+        end
+
         def text(text)
           bytes_written = 0
 
