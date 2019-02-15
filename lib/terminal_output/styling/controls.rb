@@ -33,3 +33,5 @@ require 'terminal_output/styling/controls/trait/color/background'
 require 'terminal_output/styling/controls/text'
 
 require 'terminal_output/styling/controls/io'
+
+require 'terminal_output/styling/controls/writer'
