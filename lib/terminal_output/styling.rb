@@ -33,3 +33,6 @@ require 'terminal_output/styling/trait/color/reverse_video'
 require 'terminal_output/styling/trait/color/foreground'
 require 'terminal_output/styling/trait/color/foreground/transparent'
 require 'terminal_output/styling/trait/color/background'
+
+require 'terminal_output/styling/writer/device'
+require 'terminal_output/styling/writer/device/substitute'
