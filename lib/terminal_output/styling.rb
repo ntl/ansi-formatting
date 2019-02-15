@@ -36,3 +36,4 @@ require 'terminal_output/styling/trait/color/background'
 
 require 'terminal_output/styling/writer/device'
 require 'terminal_output/styling/writer/device/substitute'
+require 'terminal_output/styling/writer'
