@@ -6,6 +6,12 @@ module TerminalOutput
       end
       attr_writer :device
 
+      def sgr(sgr_id)
+        code = SGR::Code.fetch(sgr_id)
+
+        code(code)
+      end
+
       def sync(&block)
         unless block.nil?
           device.sync do
