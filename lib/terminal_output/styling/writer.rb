@@ -24,6 +24,13 @@ module TerminalOutput
         self
       end
 
+      def style!(style, text)
+        style(style).
+          text(text).
+          reset_style(style).
+          newline
+      end
+
       def reset_style(style)
         reset_code = style.reset_code
 

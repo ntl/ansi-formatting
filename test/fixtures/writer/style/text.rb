@@ -31,6 +31,18 @@ module Fixtures
             assert(writer.device.written?(control_string))
           end
         end
+
+        class Newline < Text
+          def test_written(writer)
+            test "Activates style, writes text, then resets style, then newline" do
+              newline = Controls::Text::Newline.example
+
+              control_string = "\e[#{code}m#{control_text}\e[#{reset_code}m#{newline}"
+
+              assert(writer.device.written?(control_string))
+            end
+          end
+        end
       end
     end
   end
