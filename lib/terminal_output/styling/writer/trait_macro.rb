@@ -10,6 +10,18 @@ module TerminalOutput
           end
 
           class_exec do
+            define_method(name) do |variant_or_text=nil, text=nil, &block|
+              if !text.nil? || trait.variant?(variant_or_text)
+                variant, text = variant_or_text, text
+              else
+                variant, text = nil, variant_or_text
+              end
+
+              style = trait.style(variant)
+
+              style(style, text, &block)
+            end
+
             reset_method = :"reset_#{name}"
             define_method(reset_method) do
               reset_code = trait.reset_code
