@@ -11,3 +11,6 @@ require_relative './writer/style/reset'
 require_relative './writer/style/activate'
 require_relative './writer/style/text'
 require_relative './writer/style/block'
+
+require_relative './writer/trait'
+require_relative './writer/trait/class_method'
