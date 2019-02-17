@@ -22,6 +22,19 @@ module TerminalOutput
               style(style, text, &block)
             end
 
+            newline_method = :"#{name}!"
+            define_method(newline_method) do |variant_or_text, text=nil|
+              if !text.nil? || trait.variant?(variant_or_text)
+                variant, text = variant_or_text, text
+              else
+                variant, text = nil, variant_or_text
+              end
+
+              style = trait.style(variant)
+
+              style!(style, text)
+            end
+
             reset_method = :"reset_#{name}"
             define_method(reset_method) do
               reset_code = trait.reset_code
