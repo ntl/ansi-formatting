@@ -6,6 +6,24 @@ module TerminalOutput
       end
       attr_writer :device
 
+      def style(style, text=nil, &block)
+        code = style.code
+
+        code(code)
+
+        unless text.nil? && block.nil?
+          device.sync do
+            text(text) unless text.nil?
+
+            instance_exec(self, &block) unless block.nil?
+
+            reset_style(style)
+          end
+        end
+
+        self
+      end
+
       def reset_style(style)
         reset_code = style.reset_code
 
