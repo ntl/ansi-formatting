@@ -6,6 +6,12 @@ module TerminalOutput
       end
       attr_writer :device
 
+      def reset_style(style)
+        reset_code = style.reset_code
+
+        code(reset_code)
+      end
+
       def reset
         sgr(:reset)
       end
