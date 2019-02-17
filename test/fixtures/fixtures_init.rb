@@ -14,3 +14,4 @@ require_relative './writer/style/block'
 
 require_relative './writer/trait'
 require_relative './writer/trait/class_method'
+require_relative './writer/trait/reset'

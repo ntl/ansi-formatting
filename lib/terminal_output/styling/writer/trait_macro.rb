@@ -8,6 +8,15 @@ module TerminalOutput
               trait.style(variant)
             end
           end
+
+          class_exec do
+            reset_method = :"reset_#{name}"
+            define_method(reset_method) do
+              reset_code = trait.reset_code
+
+              code(reset_code)
+            end
+          end
         end
         alias_method :trait, :trait_macro
       end
