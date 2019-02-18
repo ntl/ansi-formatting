@@ -40,3 +40,5 @@ require 'terminal_output/styling/writer/trait_macro'
 require 'terminal_output/styling/writer/style_macro'
 require 'terminal_output/styling/writer/substitute'
 require 'terminal_output/styling/writer'
+
+require 'terminal_output/styling/build'
