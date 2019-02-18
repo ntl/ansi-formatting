@@ -43,3 +43,5 @@ require 'terminal_output/styling/writer'
 
 require 'terminal_output/styling/build'
 require 'terminal_output/styling/apply'
+
+require 'terminal_output/styling/styling'
