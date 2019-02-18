@@ -1,10 +1,24 @@
 module TerminalOutput
   module Styling
     class Writer
+      extend TraitMacro
+
       def device
         @device ||= Device::Substitute.build
       end
       attr_writer :device
+
+      trait :font_weight, Trait::Font::Weight
+      trait :font_slant, Trait::Font::Slant
+      trait :fraktur_font, Trait::Font::Fraktur, alias: :fraktur
+      trait :underline, Trait::Underline
+      trait :blink, Trait::Blink
+      trait :strikethrough, Trait::Strikethrough
+      trait :overline, Trait::Overline
+      trait :reverse_video, Trait::Color::ReverseVideo
+      trait :transparent_foreground, Trait::Color::Foreground::Transparent, alias: :transparent
+      trait :foreground_color, Trait::Color::Foreground, alias: :fg
+      trait :background_color, Trait::Color::Background, alias: :bg
 
       def style(style, text=nil, &block)
         code = style.code
