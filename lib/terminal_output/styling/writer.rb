@@ -23,6 +23,14 @@ module TerminalOutput
         instance
       end
 
+      def self.call(io=nil, styling: nil, &block)
+        instance = build(io, styling: styling)
+
+        instance.sync(&block)
+
+        io
+      end
+
       trait :font_weight, Trait::Font::Weight
       trait :font_slant, Trait::Font::Slant
       trait :fraktur_font, Trait::Font::Fraktur, alias: :fraktur
