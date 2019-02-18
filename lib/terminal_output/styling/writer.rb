@@ -22,6 +22,7 @@ module TerminalOutput
       trait :background_color, Trait::Color::Background, alias: :bg
 
       style :bold, font_weight(:bold)
+      style :faint, font_weight(:faint)
 
       def style(style, text=nil, &block)
         code = style.code

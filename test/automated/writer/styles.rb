@@ -7,5 +7,11 @@ context "Writer" do
 
       Fixtures::Writer::Style.(name: :bold, style: style)
     end
+
+    context "Faint" do
+      style = Trait::Font::Weight.style(:faint)
+
+      Fixtures::Writer::Style.(name: :faint, style: style)
+    end
   end
 end
