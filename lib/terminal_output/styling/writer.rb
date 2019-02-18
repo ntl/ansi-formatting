@@ -30,6 +30,16 @@ module TerminalOutput
       style :slow_blink, blink(:slow)
       style :rapid_blink, blink(:rapid)
 
+      Color::Palette::Standard.color_fragments.each_key do |color_id|
+         style color_id, foreground_color(color_id)
+         style :"#{color_id}_bg", background_color(color_id)
+       end
+
+      Color::Palette::HighIntensity.color_fragments.each_key do |color_id|
+         style color_id, foreground_color(color_id)
+         style :"#{color_id}_bg", background_color(color_id)
+       end
+
       def style(style, text=nil, &block)
         code = style.code
 

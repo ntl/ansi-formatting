@@ -49,5 +49,26 @@ context "Writer" do
 
       Fixtures::Writer::Style.(name: :rapid_blink, style: style)
     end
+
+    color_ids = Controls::Color::Standard::ID.list +
+      Controls::Color::HighIntensity::ID.list
+
+    color_ids.each do |color_id|
+      context "Color: #{color_id}" do
+        context "Foreground" do
+          style = Trait::Color::Foreground.style(color_id)
+
+          Fixtures::Writer::Style.(name: color_id, style: style)
+        end
+      end
+
+      context "Color: #{color_id}" do
+        context "Background" do
+          style = Trait::Color::Background.style(color_id)
+
+          Fixtures::Writer::Style.(name: :"#{color_id}_bg", style: style)
+        end
+      end
+    end
   end
 end
