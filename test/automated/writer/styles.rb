@@ -13,5 +13,11 @@ context "Writer" do
 
       Fixtures::Writer::Style.(name: :faint, style: style)
     end
+
+    context "Italic" do
+      style = Trait::Font::Slant.style(:italic)
+
+      Fixtures::Writer::Style.(name: :italic, style: style)
+    end
   end
 end
