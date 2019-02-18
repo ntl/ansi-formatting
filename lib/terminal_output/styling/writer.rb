@@ -9,6 +9,20 @@ module TerminalOutput
       end
       attr_writer :device
 
+      def self.build(io=nil, styling: nil)
+        instance = new
+        Device.configure(instance, io, styling: styling)
+        instance
+      end
+
+      def self.configure(receiver, io=nil, styling: nil, attr_name: nil)
+        attr_name ||= :writer
+
+        instance = build(io, styling: styling)
+        receiver.public_send(:"#{attr_name}=", instance)
+        instance
+      end
+
       trait :font_weight, Trait::Font::Weight
       trait :font_slant, Trait::Font::Slant
       trait :fraktur_font, Trait::Font::Fraktur, alias: :fraktur
