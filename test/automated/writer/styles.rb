@@ -19,5 +19,11 @@ context "Writer" do
 
       Fixtures::Writer::Style.(name: :italic, style: style)
     end
+
+    context "Fraktur" do
+      style = Trait::Font::Fraktur.style(:on)
+
+      Fixtures::Writer::Style.(name: :fraktur, style: style)
+    end
   end
 end

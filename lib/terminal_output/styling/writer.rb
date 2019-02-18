@@ -24,6 +24,7 @@ module TerminalOutput
       style :bold, font_weight(:bold)
       style :faint, font_weight(:faint)
       style :italic, font_slant(:italic)
+      style :fraktur, fraktur_font(:on)
 
       def style(style, text=nil, &block)
         code = style.code
