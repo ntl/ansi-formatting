@@ -21,6 +21,8 @@ module TerminalOutput
       trait :foreground_color, Trait::Color::Foreground, alias: :fg
       trait :background_color, Trait::Color::Background, alias: :bg
 
+      style :bold, font_weight(:bold)
+
       def style(style, text=nil, &block)
         code = style.code
 
