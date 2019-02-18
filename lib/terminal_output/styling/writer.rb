@@ -4,6 +4,18 @@ module TerminalOutput
       extend TraitMacro
       extend StyleMacro
 
+      def self.inherited(subclass)
+        substitute_module = Module.new do
+          define_singleton_method(:build) do
+            Substitute.build(subclass)
+          end
+        end
+
+        subclass.class_exec do
+          const_set(:Substitute, substitute_module)
+        end
+      end
+
       def device
         @device ||= Device::Substitute.build
       end
