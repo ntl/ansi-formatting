@@ -1,6 +1,14 @@
 module TerminalOutput
   module Styling
     module Apply
+      def self.call(string, **arguments)
+        string = string.dup
+
+        self.!(string, **arguments)
+
+        string
+      end
+
       def self.!(string, fg: nil, bg: nil, style: nil, styles: nil)
         styles = Array(styles)
         styles << style unless style.nil?
