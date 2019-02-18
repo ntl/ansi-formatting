@@ -25,5 +25,17 @@ context "Writer" do
 
       Fixtures::Writer::Style.(name: :fraktur, style: style)
     end
+
+    context "Single Underline" do
+      style = Trait::Underline.style(:single)
+
+      Fixtures::Writer::Style.(name: :single_underline, style: style)
+    end
+
+    context "Double Underline" do
+      style = Trait::Underline.style(:double)
+
+      Fixtures::Writer::Style.(name: :double_underline, style: style)
+    end
   end
 end
