@@ -37,5 +37,17 @@ context "Writer" do
 
       Fixtures::Writer::Style.(name: :double_underline, style: style)
     end
+
+    context "Slow Blink" do
+      style = Trait::Blink.style(:slow)
+
+      Fixtures::Writer::Style.(name: :slow_blink, style: style)
+    end
+
+    context "Rapid Blink" do
+      style = Trait::Blink.style(:rapid)
+
+      Fixtures::Writer::Style.(name: :rapid_blink, style: style)
+    end
   end
 end

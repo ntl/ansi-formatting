@@ -27,6 +27,8 @@ module TerminalOutput
       style :fraktur, fraktur_font(:on)
       style :single_underline, underline(:single)
       style :double_underline, underline(:double)
+      style :slow_blink, blink(:slow)
+      style :rapid_blink, blink(:rapid)
 
       def style(style, text=nil, &block)
         code = style.code
