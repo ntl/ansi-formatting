@@ -7,7 +7,8 @@ context "Writer" do
 
       variant = Controls::Trait::Font::Slant::Variant.example
 
-      Fixtures::Writer::Trait.(
+      fixture(
+        Fixtures::Writer::Trait,
         name: :font_slant,
         trait: trait,
         variant: variant

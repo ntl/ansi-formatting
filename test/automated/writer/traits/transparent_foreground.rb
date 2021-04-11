@@ -7,13 +7,15 @@ context "Writer" do
 
       variant = Controls::Trait::Color::Foreground::Transparent::Variant.example
 
-      Fixtures::Writer::Trait.(
+      fixture(
+        Fixtures::Writer::Trait,
         name: :transparent_foreground,
         trait: trait,
         variant: variant
       )
 
-      Fixtures::Writer::Trait.(
+      fixture(
+        Fixtures::Writer::Trait,
         name: :transparent,
         trait: trait,
         variant: variant

@@ -7,7 +7,8 @@ context "Writer" do
 
       variant = Controls::Trait::Overline::Variant.example
 
-      Fixtures::Writer::Trait.(
+      fixture(
+        Fixtures::Writer::Trait,
         name: :overline,
         trait: trait,
         variant: variant

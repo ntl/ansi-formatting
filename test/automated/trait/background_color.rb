@@ -6,13 +6,17 @@ context "Trait" do
 
     color_id = Controls::Trait::Color::Background::Variant.example
 
-    Fixtures::Trait.(
+    fixture(
+      Fixtures::Trait,
       trait,
       variant: color_id,
       code: Controls::Trait::Color::Background::Code.example(color_id),
       reset_code: Controls::Trait::Color::Background::Code.reset
     )
 
-    Fixtures::Trait::Unknown.(trait)
+    fixture(
+      Fixtures::Trait::Unknown,
+      trait
+    )
   end
 end

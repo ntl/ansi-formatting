@@ -12,7 +12,8 @@ context "Writer" do
         style(:some_style, style_1, style_2)
       end
 
-      Fixtures::Writer::Style.(
+      fixture(
+        Fixtures::Writer::Style,
         writer_class: writer_class,
         name: :some_style,
         style: control_style

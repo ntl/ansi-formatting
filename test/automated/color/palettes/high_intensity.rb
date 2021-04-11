@@ -5,7 +5,8 @@ context "Color" do
     context "High Intensity" do
       Controls::Color::HighIntensity::ID.list.each do |color_id|
         context "Color: #{color_id.inspect}" do
-          Fixtures::Color::Palette::Color.(
+          fixture(
+            Fixtures::Color::Palette::Color,
             Color::Palette::HighIntensity,
             color_id: color_id,
             foreground: Controls::Color::HighIntensity::Foreground.code(color_id),
@@ -15,7 +16,8 @@ context "Color" do
       end
 
       context "Alias: :intense_text_bg" do
-        Fixtures::Color::Palette::Color.(
+        fixture(
+          Fixtures::Color::Palette::Color,
           Color::Palette::HighIntensity,
           color_id: :intense_text_bg,
           foreground: Controls::Color::HighIntensity::Foreground.code(:intense_black),
@@ -24,7 +26,8 @@ context "Color" do
       end
 
       context "Alias: :intense_text_fg" do
-        Fixtures::Color::Palette::Color.(
+        fixture(
+          Fixtures::Color::Palette::Color,
           Color::Palette::HighIntensity,
           color_id: :intense_text_fg,
           foreground: Controls::Color::HighIntensity::Foreground.code(:intense_white),
@@ -33,14 +36,16 @@ context "Color" do
       end
 
       context "Unknown Color: :unknown" do
-        Fixtures::Color::Palette::Color::Unknown.(
+        fixture(
+          Fixtures::Color::Palette::Color::Unknown,
           Color::Palette::HighIntensity,
           :unknown
         )
       end
 
       context "Caching" do
-        Fixtures::Color::Palette::Caching.(
+        fixture(
+          Fixtures::Color::Palette::Caching,
           Color::Palette::HighIntensity,
           Controls::Color::HighIntensity::ID.example
         )

@@ -9,7 +9,8 @@ context "Writer" do
         trait(:some_trait, trait)
       end
 
-      Fixtures::Writer::Trait::Reset.(
+      fixture(
+        Fixtures::Writer::Trait::Reset,
         name: :some_trait,
         trait: trait,
         writer_class: writer_class

@@ -11,7 +11,8 @@ context "Writer" do
         trait(:some_trait, trait)
       end
 
-      Fixtures::Writer::Trait::ClassMethod.(
+      fixture(
+        Fixtures::Writer::Trait::ClassMethod,
         writer_class: writer_class,
         trait: trait,
         variant: variant,

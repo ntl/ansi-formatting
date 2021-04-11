@@ -8,7 +8,8 @@ context "Color" do
 
         list.each do |color_id|
           context "Color: #{color_id.inspect}" do
-            Fixtures::Color::Palette::Color.(
+            fixture(
+              Fixtures::Color::Palette::Color,
               Color::Palette::TwentyFourBit::Unabridged,
               color_id: color_id,
               foreground: Controls::Color::TwentyFourBit::Unabridged::Foreground.code(color_id),
@@ -19,7 +20,8 @@ context "Color" do
 
         [0x111111, '#111', '111111', '0x1111111', '0x11111', '#11111', '#1111111'].each do |incorrect|
           context "Unknown Color: #{incorrect.inspect}" do
-            Fixtures::Color::Palette::Color::Unknown.(
+            fixture(
+              Fixtures::Color::Palette::Color::Unknown,
               Color::Palette::TwentyFourBit::Unabridged,
               incorrect
             )
@@ -27,7 +29,8 @@ context "Color" do
         end
 
         context "Caching" do
-          Fixtures::Color::Palette::Caching::None.(
+          fixture(
+            Fixtures::Color::Palette::Caching::None,
             Color::Palette::TwentyFourBit::Unabridged,
             Controls::Color::TwentyFourBit::Unabridged::ID.example
           )

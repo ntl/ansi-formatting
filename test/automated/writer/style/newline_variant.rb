@@ -5,7 +5,10 @@ context "Writer" do
     context "Newline Variant" do
       style = Controls::Style.example
 
-      Fixtures::Writer::Style::Text::Newline.(style: style) do |writer, text|
+      fixture(
+        Fixtures::Writer::Style::Text::Newline,
+        style: style
+      ) do |writer, text|
         writer.style!(style, text)
       end
     end

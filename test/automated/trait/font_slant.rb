@@ -5,7 +5,8 @@ context "Trait" do
     trait = Trait::Font::Slant
 
     Controls::Trait::Font::Slant::Variant.list.each do |variant|
-      Fixtures::Trait.(
+      fixture(
+        Fixtures::Trait,
         trait,
         variant: variant,
         code: Controls::Trait::Font::Slant::Code.example(variant),
@@ -13,6 +14,9 @@ context "Trait" do
       )
     end
 
-    Fixtures::Trait::Unknown.(trait)
+    fixture(
+      Fixtures::Trait::Unknown,
+      trait
+    )
   end
 end

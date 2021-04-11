@@ -11,7 +11,8 @@ context "Writer" do
 
       trait_variant = Controls::Trait::Variant.example
 
-      Fixtures::Writer::Trait::Text::Newline.(
+      fixture(
+        Fixtures::Writer::Trait::Text::Newline,
         name: :some_trait,
         trait: trait,
         variant: trait_variant,

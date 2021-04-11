@@ -5,12 +5,16 @@ context "Trait" do
 
   variant = Controls::Trait::Variant.example
 
-  Fixtures::Trait.(
+  fixture(
+    Fixtures::Trait,
     trait,
     variant: variant,
     code: Controls::Trait::Code.example,
     reset_code: Controls::Trait::Code::Reset.example
   )
 
-  Fixtures::Trait::Unknown.(trait)
+  fixture(
+    Fixtures::Trait::Unknown,
+    trait
+  )
 end

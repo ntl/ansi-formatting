@@ -3,7 +3,7 @@ module Fixtures
     module Palette
       class Color
         class Unknown
-          include TestBench::Bootstrap::Fixture
+          include TestBench::Fixture
 
           attr_reader :palette
           attr_reader :color_id
@@ -11,11 +11,6 @@ module Fixtures
           def initialize(palette, color_id)
             @palette = palette
             @color_id = color_id
-          end
-
-          def self.call(palette, color_id)
-            instance = new(palette, color_id)
-            instance.()
           end
 
           def call

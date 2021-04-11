@@ -7,7 +7,8 @@ context "Writer" do
 
       variant = Controls::Trait::Font::Weight::Variant.example
 
-      Fixtures::Writer::Trait.(
+      fixture(
+        Fixtures::Writer::Trait,
         name: :font_weight,
         trait: trait,
         variant: variant

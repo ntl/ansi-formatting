@@ -8,7 +8,8 @@ context "Writer" do
       style(:some_style, control_style)
     end
 
-    Fixtures::Writer::Style.(
+    fixture(
+      Fixtures::Writer::Style,
       writer_class: writer_class,
       name: :some_style,
       style: control_style

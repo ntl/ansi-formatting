@@ -12,7 +12,8 @@ context "Writer" do
       variant = Controls::Trait::Variant.example
 
       context "Activate" do
-        Fixtures::Writer::Trait::Activate.(
+        fixture(
+          Fixtures::Writer::Trait::Activate,
           name: :some_trait,
           trait: trait,
           variant: variant,
@@ -21,7 +22,8 @@ context "Writer" do
       end
 
       context "Block" do
-        Fixtures::Writer::Trait::Block.(
+        fixture(
+          Fixtures::Writer::Trait::Block,
           name: :some_trait,
           trait: trait,
           variant: variant,
@@ -30,7 +32,8 @@ context "Writer" do
       end
 
       context "Text" do
-        Fixtures::Writer::Trait::Text.(
+        fixture(
+          Fixtures::Writer::Trait::Text,
           name: :some_trait,
           trait: trait,
           variant: variant,

@@ -7,7 +7,8 @@ context "Writer" do
 
       variant = Controls::Trait::Color::Background::Variant.example
 
-      Fixtures::Writer::Trait.(
+      fixture(
+        Fixtures::Writer::Trait,
         name: :background_color,
         trait: trait,
         variant: variant

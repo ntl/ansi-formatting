@@ -1,6 +1,6 @@
 module Fixtures
   class Trait
-    include TestBench::Bootstrap::Fixture
+    include TestBench::Fixture
 
     attr_reader :trait
     attr_reader :variant
@@ -16,11 +16,10 @@ module Fixtures
       @control_reset_code = control_reset_code
     end
 
-    def self.call(trait, variant:, code:, reset_code:, default_code: nil)
+    def self.build(trait, variant:, code:, reset_code:, default_code: nil)
       default_code ||= trait.default_code
 
-      instance = new(trait, variant, code, default_code, reset_code)
-      instance.()
+      new(trait, variant, code, default_code, reset_code)
     end
 
     def call

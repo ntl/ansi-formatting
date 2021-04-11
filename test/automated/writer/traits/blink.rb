@@ -7,7 +7,8 @@ context "Writer" do
 
       variant = Controls::Trait::Blink::Variant.example
 
-      Fixtures::Writer::Trait.(
+      fixture(
+        Fixtures::Writer::Trait,
         name: :blink,
         trait: trait,
         variant: variant

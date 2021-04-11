@@ -1,16 +1,15 @@
 module Fixtures
   module Writer
-    module Style
+    class Style
       class Text
-        include TestBench::Bootstrap::Fixture
-        include Style
+        include Fixture
 
         def control_text
           @control_text ||= Controls::Text.example
         end
         attr_writer :control_text
 
-        def call(prose=nil)
+        def call
           context prose do
             writer = writer_class.new
 

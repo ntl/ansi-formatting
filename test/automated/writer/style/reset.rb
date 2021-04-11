@@ -5,7 +5,10 @@ context "Writer" do
     context "Reset" do
       style = Controls::Style.example
 
-      Fixtures::Writer::Style::Reset.(style: style) do |writer|
+      fixture(
+        Fixtures::Writer::Style::Reset,
+        style: style
+      ) do |writer|
         writer.reset_style(style)
       end
     end

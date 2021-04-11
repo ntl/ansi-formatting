@@ -1,11 +1,10 @@
 module Fixtures
   module Writer
-    module Style
+    class Style
       class Reset
-        include TestBench::Bootstrap::Fixture
-        include Style
+        include Fixture
 
-        def call(prose=nil)
+        def call
           context prose do
             writer = writer_class.new
 

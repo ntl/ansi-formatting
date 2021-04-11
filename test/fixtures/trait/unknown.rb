@@ -1,7 +1,7 @@
 module Fixtures
   class Trait
     class Unknown
-      include TestBench::Bootstrap::Fixture
+      include TestBench::Fixture
 
       attr_reader :trait
       attr_reader :variant
@@ -11,11 +11,10 @@ module Fixtures
         @variant = variant
       end
 
-      def self.call(trait, variant: nil)
+      def self.build(trait, variant: nil)
         variant ||= Defaults.variant
 
-        instance = new(trait, variant)
-        instance.()
+        new(trait, variant)
       end
 
       def call

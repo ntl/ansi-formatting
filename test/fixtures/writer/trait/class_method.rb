@@ -1,9 +1,8 @@
 module Fixtures
   module Writer
-    module Trait
+    class Trait
       class ClassMethod
-        include TestBench::Bootstrap::Fixture
-        include Trait
+        include Fixture
 
         def call(prose=nil)
           context prose do

@@ -7,7 +7,8 @@ context "Writer" do
 
       variant = Controls::Trait::Strikethrough::Variant.example
 
-      Fixtures::Writer::Trait.(
+      fixture(
+        Fixtures::Writer::Trait,
         name: :strikethrough,
         trait: trait,
         variant: variant

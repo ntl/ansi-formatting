@@ -8,7 +8,8 @@ context "Color" do
 
         color_ids.each do |color_id|
           context "Color: #{'%04o' % color_id}" do
-            Fixtures::Color::Palette::Color.(
+            fixture(
+              Fixtures::Color::Palette::Color,
               Color::Palette::EightBit::RGB,
               color_id: color_id,
               foreground: Controls::Color::EightBit::RGB::Foreground.code(color_id),
@@ -19,7 +20,8 @@ context "Color" do
 
         [0006, 0060, 0600, 01000].each do |incorrect|
           context "Unknown Color: #{'%04o' % incorrect}" do
-            Fixtures::Color::Palette::Color::Unknown.(
+            fixture(
+              Fixtures::Color::Palette::Color::Unknown,
               Color::Palette::EightBit::RGB,
               incorrect
             )
@@ -28,7 +30,8 @@ context "Color" do
 
         ['0555', 1.1, -1].each do |incorrect|
           context "Unknown Color: #{incorrect}" do
-            Fixtures::Color::Palette::Color::Unknown.(
+            fixture(
+              Fixtures::Color::Palette::Color::Unknown,
               Color::Palette::EightBit::RGB,
               incorrect
             )
@@ -36,7 +39,8 @@ context "Color" do
         end
 
         context "Caching" do
-          Fixtures::Color::Palette::Caching.(
+          fixture(
+            Fixtures::Color::Palette::Caching,
             Color::Palette::EightBit::RGB,
             Controls::Color::EightBit::RGB::ID.example
           )

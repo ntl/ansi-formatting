@@ -6,7 +6,8 @@ context "Color" do
       context "Unabridged" do
         color_id = Controls::Color::TwentyFourBit::Unabridged::ID.example
 
-        Fixtures::Color::Palette::Color.(
+        fixture(
+          Fixtures::Color::Palette::Color,
           Color::Palette::TwentyFourBit,
           color_id: color_id,
           foreground: Controls::Color::TwentyFourBit::Unabridged::Foreground.code(color_id),
@@ -17,7 +18,8 @@ context "Color" do
       context "Abridged" do
         color_id = Controls::Color::TwentyFourBit::Abridged::ID.example
 
-        Fixtures::Color::Palette::Color.(
+        fixture(
+          Fixtures::Color::Palette::Color,
           Color::Palette::TwentyFourBit,
           color_id: color_id,
           foreground: Controls::Color::TwentyFourBit::Abridged::Foreground.code(color_id),

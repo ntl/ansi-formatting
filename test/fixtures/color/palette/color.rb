@@ -2,7 +2,7 @@ module Fixtures
   module Color
     module Palette
       class Color
-        include TestBench::Bootstrap::Fixture
+        include TestBench::Fixture
 
         attr_reader :palette
         attr_reader :color_id
@@ -16,9 +16,8 @@ module Fixtures
           @control_background = control_background
         end
 
-        def self.call(palette, color_id:, foreground:, background:)
-          instance = new(palette, color_id, foreground, background)
-          instance.()
+        def self.build(palette, color_id:, foreground:, background:)
+          new(palette, color_id, foreground, background)
         end
 
         def call

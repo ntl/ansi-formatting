@@ -7,7 +7,8 @@ context "Writer" do
 
       variant = Controls::Trait::Color::ReverseVideo::Variant.example
 
-      Fixtures::Writer::Trait.(
+      fixture(
+        Fixtures::Writer::Trait,
         name: :reverse_video,
         trait: trait,
         variant: variant
